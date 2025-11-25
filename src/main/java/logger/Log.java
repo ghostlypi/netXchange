@@ -73,7 +73,6 @@ public class Log {
             }
             writer.flush();
             writer.close();
-            push("warn","Saved log to file");
             return true;
         } catch (IOException e) {
             push("crit","Failed to save log to file!");
@@ -82,9 +81,7 @@ public class Log {
     }
 
     public void clear() {
-        Message last = log.getLast();
         log.clear();
-        log.add(last);
     }
 
     public void printmessage(int i) {

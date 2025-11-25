@@ -98,6 +98,12 @@ public class Logger implements System.Logger, Runnable {
         return buffer.isEmpty();
     }
 
+    public boolean save_clear() {
+        boolean out = log.save();
+        log.clear();
+        return out;
+    }
+
     @Override
     public void run() {
         stop = false;
